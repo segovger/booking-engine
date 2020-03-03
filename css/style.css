@@ -1,0 +1,109 @@
+/*HELPERS*/
+
+.spacer{
+    height: 100px;
+    width: 100%;
+}
+
+.small-spacer{
+    height: 50px;
+    width: 100%;
+}
+
+.pt{
+    padding-top: 20px;
+}
+
+.height500{
+    height: 500px;
+}
+
+.height600{
+    height: 600px;
+}
+
+.uppercase{
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+@media screen and (max-width: 760px){
+    .desktop-only{
+        display: none;;
+    }
+}
+
+
+/*OVERRIDES*/
+
+.buttons{
+    justify-content: center;
+}
+
+.button{
+    border-radius: 0 !important;
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+}
+
+.button.is-medium{
+    border-radius: 0;
+}
+
+.select {
+    width: 100%;
+    background: white;
+}
+
+.select select {
+    border-color: transparent !important;
+}
+
+select.is-hovered{
+    padding-right: 10em;
+}
+
+.select select.is-hovered, .select select:hover {
+    padding-right: 10em;
+}
+
+.input{
+    border-color: transparent;
+    box-shadow: none;
+}
+
+footer a{
+    color: black;
+}
+
+
+/*STYLES*/
+
+.registro-btn{
+    font-size: 0.9em;
+    border-radius: 0;
+}
+
+.hero-form input{
+    border-radius: 0;
+}
+
+.logos-clientes li{
+    display: inline-block;
+    padding: 10px;
+}
+
+.logos-clientes img{
+    opacity: 0.4;
+    height: 30px;
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+
+.footer-social-media li{
+    display: inline-block;
+    padding: 10px;
+}
+
+
+
