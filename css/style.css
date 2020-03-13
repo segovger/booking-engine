@@ -76,6 +76,13 @@ footer a{
     color: black;
 }
 
+@media screen and (max-width: 760px){
+    .column{
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+}
+
 
 /*STYLES*/
 
