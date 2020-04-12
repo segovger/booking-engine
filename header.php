@@ -2,7 +2,7 @@
 <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Nosotros</title>
+        <title>Booking Engine</title>
         <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -27,7 +27,7 @@
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="#">
+      <a class="navbar-item" href="index.php">
         <h1 class="title is-5 uppercase">logo</h1>
       </a>
   
@@ -63,28 +63,28 @@
               </a>
             </div>
         </div>
-        <a class="navbar-item">
+        <a class="navbar-item" href="nosotros.html">
            Nosotros
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="contacto.html">
             Contacto
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="faq.html">
             FAQs
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="booking.php">
             Booking
         </a>
-        <a class="navbar-item">
+        <!--<a class="navbar-item">
             Log in
-        </a>
-        <div class="navbar-item">
+        </a>-->
+        <!--<div class="navbar-item">
           <div class="buttons">
             <a class="button is-black registro-btn">
               Registro
             </a>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </nav>
