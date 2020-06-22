@@ -3,9 +3,12 @@
 $POST = filter_var_array($_POST, FILTER_SANITIZE_STRING);
 
     require_once('vendor/autoload.php');
+    require_once('transactions/transactionsDb/db.php');
+    require_once('lib/pdo_db.php');
+    require_once('transactions/transaction_models/Customer.php');
 
 //INGRESAR API
-    \Stripe\Stripe::setApiKey('INGRESAMOS LA API QUE APARECE EN EL DASHBOARD');
+    \Stripe\Stripe::setApiKey('secret key');
 
 
 $first_name = $POST['first_name'];
@@ -33,8 +36,24 @@ $charge = \Stripe\Charge::create([
     "customer" => $customer->id
 ]);
 
-//Debugging
-//print_r($charge);
+
+
+//Customer Data
+$customerData = [
+    'id' => $charge->customer,
+    'first_name' => $first_name,
+    'last_name' => $last_name,
+    'email' => $email,
+    'amount' => $charge->amount
+];
+
+
+//Instancias Customer
+$customer = new Customer();
+
+//Agregar Customer a DB //***** */
+$customer->addCustomer($customerData); 
+
 
 //Redirigir a los clientes a Success Page cuando pase su pago
 header('Location: success.php?tid='.$charge->id.'&product='.$charge->description);

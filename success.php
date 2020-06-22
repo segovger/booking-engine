@@ -24,7 +24,7 @@
         <hr>
         <p>Transaction ID: <?php echo $tid; ?></p>
         <p>Chech your email for more information</p>
-        <a href="index.php" class="button">Regresar</a>
+        <a href="index.php" class="button">Finalizar</a>
     </div>
 
     <?php include 'footer.php'; ?>
