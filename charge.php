@@ -8,7 +8,7 @@ $POST = filter_var_array($_POST, FILTER_SANITIZE_STRING);
     require_once('transactions/transaction_models/Customer.php');
 
 //INGRESAR API
-    \Stripe\Stripe::setApiKey('secret key');
+    \Stripe\Stripe::setApiKey('Secret Key');
 
 
 $first_name = $POST['first_name'];
@@ -30,7 +30,7 @@ $customer = \Stripe\Customer::create([
 
 
 $charge = \Stripe\Charge::create([
-    "amount" => 1000,
+    "amount" => 500,
     "currency" => "usd",
     "description" => "Booking Reservation",
     "customer" => $customer->id

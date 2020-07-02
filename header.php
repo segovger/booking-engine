@@ -1,3 +1,26 @@
+<?php
+
+session_start();
+
+require 'transactions/transactionsDb/db.php';
+
+if( isset($_SESSION['user_id']) ){
+
+	$records = $conn->prepare('SELECT id,username,password FROM admins WHERE id = :id');
+	$records->bindParam(':id', $_SESSION['user_id']);
+	$records->execute();
+	$results = $records->fetch(PDO::FETCH_ASSOC);
+
+	$user = NULL;
+
+	if( count($results) > 0){
+		$user = $results;
+	}
+
+}
+
+?>
+
 <head>
 <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,18 +86,22 @@
               </a>
             </div>
         </div>
-        <a class="navbar-item" href="nosotros.html">
+        <a class="navbar-item" href="nosotros.php">
            Nosotros
         </a>
-        <a class="navbar-item" href="contacto.html">
+        <a class="navbar-item" href="contacto.php">
             Contacto
         </a>
-        <a class="navbar-item" href="faq.html">
+        <a class="navbar-item" href="faq.php">
             FAQs
         </a>
         <a class="navbar-item" href="booking.php">
             Booking
         </a>
+        <?php if( !empty($user) ): ?>
+          <a class="navbar-item" href="logout.php">&nbsp;Cerrar sesión</a>
+          <?php else: ?>
+        <?php endif; ?>
         <!--<a class="navbar-item">
             Log in
         </a>-->

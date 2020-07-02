@@ -1,5 +1,14 @@
 <?php 
+
     include 'header.php';
+    
+    session_start();
+
+    if(!isset($_SESSION['user_id']) ){
+    header("Location: login.php");
+    }
+
+    
     require_once('transactions/transactionsDb/db.php');
     require_once('lib/pdo_db.php');
     require_once('transactions/transaction_models/Customer.php');
@@ -10,6 +19,7 @@
     //Obtener Customer
     $customers = $customer->getCustomers();
 
+
 ?>
 
 
@@ -18,7 +28,7 @@
 <html lang="en">
 
 <body>
-
+    <div class="container"><div class="btn-container"><?php if( !empty($user) ): ?><a href="logout.php" class="button">Cerrar sesión</a><?php else: ?><a href="login.php" class="button">Login</a><?php endif; ?></div></div>
     <div class="container" style="overflow-x:auto;">
         <h2 class="title is-2">Clientes</h2>
         <table class="table is-fullwidth">
